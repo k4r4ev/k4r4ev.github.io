@@ -307,6 +307,17 @@ a.project2 {
     flex-wrap: wrap;
 }
 
+.clients div {
+    width: 400px;
+    height: 100px;
+}
+
+.client {
+    width: 200px;
+    height: 100px;
+}
+
+
 
 
 

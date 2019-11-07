@@ -314,6 +314,16 @@ a.project2 {
     align-items: center;
 }
 
+.clients div {
+    width: 200px;
+    height: 100px;
+}
+
+.client {
+    width: 200px;
+    height: 100px;
+}
+
 
 
 

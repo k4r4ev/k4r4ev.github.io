@@ -8,8 +8,11 @@
     <link href="styles/small.css" rel="stylesheet" media="(max-width: 480px)">
     <link href="styles/medium.css" rel="stylesheet" media="(min-width:481px) and (max-width:768px)">
     <link href="styles/large.css" rel="stylesheet" media="(min-width:769px)">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.min.css">
+    <script src="assets/jquery/jquery.js"></script>
+    <script src="assets/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick-theme.css" />
     <link href="https://fonts.googleapis.com/css?family=Revalia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -136,10 +139,37 @@
     </div>
 
     <div class="container clients">
-        <img class="client" src="images/picture8.svg" alt="error">
-        <img class="client" src="images/picture8.svg" alt="error">
-        <img class="client" src="images/picture8.svg" alt="error">
-        <img class="client" src="images/picture8.svg" alt="error">
+        <div class="slider multiple-items">
+            <div><img class="client" src="images/picture8.svg" alt="error"></div>
+            <div><img class="client" src="images/picture8.svg" alt="error"></div>
+            <div><img class="client" src="images/picture8.svg" alt="error"></div>
+            <div><img class="client" src="images/picture8.svg" alt="error"></div>
+            <div><img class="client" src="images/picture8.svg" alt="error"></div>
+        </div>
+        <script>
+            $('.multiple-items').slick({
+                infinite: true,
+                dots: true,
+                arrows: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [{
+                        breakpoint: 769,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 481,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        </script>
     </div>
 
     <div class="form">
