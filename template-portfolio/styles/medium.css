@@ -236,6 +236,8 @@ button {
     background-image: url("../images/picture4.svg");
     width: 450px;
     height: 260px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .video-button__circle {
@@ -259,6 +261,23 @@ button {
     border-bottom: 10px solid transparent;
 }
 
+@media (min-width: 768px) {
+    .video_picture {
+        width: 700px;
+        height: 350px;
+    }
+
+    .video-button__circle {
+        margin-top: 160px;
+        margin-left: 330px;
+    }
+
+    .video-button__triangle {
+        margin-top: 174px;
+        margin-left: 348px;
+    }
+}
+
 
 
 
@@ -266,7 +285,7 @@ button {
 /* PROJECTS */
 .projects {
     margin: 100px 0;
-    max-width: 540px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -281,15 +300,19 @@ button {
 }
 
 a.project1 {
-    width: 180px;
-    height: 180px;
+    width: 25%;
+    height: 25vw;
     background: url("../images/picture6.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a.project2 {
-    width: 180px;
-    height: 180px;
+    width: 25%;
+    height: 25vw;
     background: url("../images/picture7.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -316,6 +339,14 @@ a.project2 {
     width: 200px;
     height: 100px;
 }
+
+@media (min-width: 768px) {
+    .clients div {
+        width: 600px;
+        height: 120px;
+    }
+}
+
 
 
 

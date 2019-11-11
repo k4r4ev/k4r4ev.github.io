@@ -241,6 +241,8 @@ button {
     background-image: url("../images/picture4.svg");
     width: 320px;
     height: 185px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .video-button__circle {
@@ -275,7 +277,7 @@ button {
 /* PROJECTS */
 .projects {
     margin: 100px 0;
-    max-width: 480px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -290,15 +292,19 @@ button {
 }
 
 a.project1 {
-    width: 180px;
-    height: 180px;
+    width: 50%;
+    height: 50vw;
     background: url("../images/picture6.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a.project2 {
-    width: 180px;
-    height: 180px;
+    width: 50%;
+    height: 50vw;
     background: url("../images/picture7.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 

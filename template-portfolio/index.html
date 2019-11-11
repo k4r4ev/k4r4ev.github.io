@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>template</title>
     <link href="styles/small.css" rel="stylesheet" media="(max-width: 480px)">
-    <link href="styles/medium.css" rel="stylesheet" media="(min-width:481px) and (max-width:768px)">
-    <link href="styles/large.css" rel="stylesheet" media="(min-width:769px)">
+    <link href="styles/medium.css" rel="stylesheet" media="(min-width:481px) and (max-width:1024px)">
+    <link href="styles/large.css" rel="stylesheet" media="(min-width:1024px)">
     <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.min.css">
     <script src="assets/jquery/jquery.js"></script>
     <script src="assets/slick/slick.min.js"></script>
@@ -154,6 +154,12 @@
                 slidesToShow: 4,
                 slidesToScroll: 1,
                 responsive: [{
+                        breakpoint: 1025,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    }, {
                         breakpoint: 769,
                         settings: {
                             slidesToShow: 2,

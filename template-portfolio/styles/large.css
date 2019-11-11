@@ -237,8 +237,8 @@ button {
 }
 
 .skills-box img {
-    width: 555px;
-    height: 450px;
+    width: 505px;
+    height: 410px;
 }
 
 
@@ -257,14 +257,16 @@ button {
 
 .video_picture {
     background-image: url("../images/picture4.svg");
-    width: 1110px;
-    height: 600px;
+    width: 1000px;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .video-button__circle {
     position: absolute;
-    margin-top: 250px;
-    margin-left: 505px;
+    margin-top: 240px;
+    margin-left: 480px;
     width: 100px;
     height: 100px;
     background: #fff;
@@ -273,8 +275,8 @@ button {
 
 .video-button__triangle {
     position: absolute;
-    margin-top: 280px;
-    margin-left: 540px;
+    margin-top: 270px;
+    margin-left: 515px;
     width: 0;
     height: 0;
     border-top: 20px solid transparent;
@@ -308,15 +310,17 @@ button {
 }
 
 a.project1 {
-    width: 24vw;
-    height: 24vw;
+    width: 25%;
+    height: 25vw;
     background-image: url("../images/picture6.svg");
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a.project1:hover {
     background: linear-gradient(0deg, rgba(52, 84, 122, 0.8), rgba(52, 84, 122, 0.8)), url(../images/picture6.svg);
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a.project1:after {
@@ -335,15 +339,17 @@ a.project1:hover:after {
 }
 
 a.project2 {
-    width: 24vw;
-    height: 24vw;
+    width: 25%;
+    height: 25vw;
     background-image: url("../images/picture7.svg");
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a.project2:hover {
     background: linear-gradient(0deg, rgba(52, 84, 122, 0.8), rgba(52, 84, 122, 0.8)), url(../images/picture7.svg);
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a.project2:after {
@@ -378,12 +384,12 @@ a.project2:hover:after {
 }
 
 .clients div {
-    width: 1120px;
+    width: 1000px;
     height: 120px;
 }
 
 .client {
-    width: 255px;
+    width: 250px;
     height: 120px;
 }
 
