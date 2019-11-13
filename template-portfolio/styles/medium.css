@@ -47,6 +47,7 @@ button {
     text-align: center;
     letter-spacing: 0.1em;
     color: #FFFFFF;
+    border: none;
 }
 
 
@@ -110,7 +111,7 @@ button {
 .header__panel a {
     display: inline-block;
     text-transform: uppercase;
-    margin: 0 3px;
+    margin: 0 2px;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -354,42 +355,42 @@ a.project2 {
 
 
 /* FORM */
-.form {
+.form-box {
     height: 700px;
     background: #EEEFF1;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.form-box {
+.form-box * {
+    margin: 10px 0;
+}
+
+.form {
     width: 400px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-}
-
-.form * {
-    margin: 10px 0;
 }
 
 .form input {
     border: none;
-    width: 190px;
     height: 50px;
-}
-
-.form input:first-of-type {
-    margin-right: 20px;
+    width: calc(50% - 10px);
 }
 
 .form textarea {
     resize: none;
     border: none;
-    width: 400px;
+    width: 100%;
     height: 175px;
+}
+
+.form button {
+    margin: 10px auto;
 }
 
 
