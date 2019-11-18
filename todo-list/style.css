@@ -5,10 +5,11 @@ body {
 }
 
 h2 {
-    font-family: Revalia, serif;
-    font-size: 20px;
+    font-family: Roboto, serif;
+    font-size: 25px;
     text-align: center;
     color: brown;
+    outline: none;
 }
 
 hr {
@@ -96,6 +97,11 @@ hr {
 
 .desk ul {
     color: lightsteelblue;
+}
+
+.desk li {
+    font-size: 20px;
+    outline: none;
 }
 
 .desk div {

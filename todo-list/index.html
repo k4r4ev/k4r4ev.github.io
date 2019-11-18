@@ -9,16 +9,19 @@
 </head>
 
 <body>
-<div class="panel">
-    <div class="logo">ToDoList</div>
-    <div>
-        <input type="text" id="deskName" placeholder="The name of the desk">
-        <input type="button" onclick="createDesk();" value="Add new desk">
+    <div class="panel">
+        <div class="logo">ToDoList</div>
+        <div>
+            <input type="text" id="deskName" placeholder="The name of the desk">
+            <input type="button" onclick="createDesk();" value="Add new desk">
+        </div>
     </div>
-</div>
 
-<div class="container" id="container">
-    <div id="d1" class="desk">
+    <div class="container" id="container">
+
+    </div>
+
+    <!--     <div id="d1" class="desk">
         <div class="title">
             <h2 contenteditable="true">The name of the desk</h2>
             <a onclick="deleteDesk(d1);">&nbsp;delete</a>
@@ -40,9 +43,11 @@
             <input type="text" placeholder="Name of new task">
             <input type="button" onclick="createTask();" value="Add new task">
         </div>
-    </div>
-
-</div>
+    </div> -->
+    
+    <script>
+        createDesk();
+    </script>
 </body>
 
 </html>
