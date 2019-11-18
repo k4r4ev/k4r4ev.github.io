@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <title>ToDoList</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Revalia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="panel">
+        <div class="logo">ToDoList</div>
+        <div>
+            <input type="text" placeholder="The name of the desk">
+            <input type="button" onclick="createDesk();" value="Add new desk">
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div id="d1" class="desk">
+            <div>
+                <h2>The name of the desk</h2>
+                <a onclick="deleteDesk();">&nbsp;delete</a>
+            </div>
+            <hr>
+            <ul class="list">
+                <li id="d1t1" contenteditable="true">task #1</li>
+                <span contenteditable="false">(<a onclick="deleteTask();">delete</a>|<a
+                        onclick="changeTask();">change</a>)</span>
+                <li id="d1t2" contenteditable="true">task #1</li>
+                <span contenteditable="false">(<a onclick="deleteTask();">delete</a>|<a
+                        onclick="changeTask();">change</a>)</span>
+                <li id="d1t3" contenteditable="true">task #1</li>
+                <span contenteditable="false">(<a onclick="deleteTask();">delete</a>|<a
+                        onclick="changeTask();">change</a>)</span>
+            </ul>
+            <hr>
+            <div>
+                <input type="text" placeholder="Name of new task">
+                <input type="button" value="Add new task">
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
