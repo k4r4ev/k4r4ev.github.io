@@ -5,7 +5,6 @@ function createDesk() {
     let desk = document.createElement("div");
     desk.setAttribute("id", "d" + String(d));
     desk.className = "desk";
-    let hr = document.createElement("hr");
     //TITLE
     let title = document.createElement("div");
     title.className = "title";
@@ -17,6 +16,7 @@ function createDesk() {
     } else {
         titleText.innerHTML = "The name of the desk";
     }
+    document.getElementById('deskName').value = null;
     let titleButton = document.createElement("a");
     let deleteDesk = "deleteDesk(d" + d + ");";
     titleButton.setAttribute("onclick", deleteDesk);
@@ -24,7 +24,7 @@ function createDesk() {
     title.appendChild(titleText);
     title.appendChild(titleButton);
     desk.appendChild(title);
-    desk.appendChild(hr);
+    desk.appendChild(document.createElement("hr"));
     //LIST
     let ul = document.createElement("ul");
     ul.className = "list";
@@ -33,7 +33,7 @@ function createDesk() {
         createTask(ul);
     }
     desk.appendChild(ul);
-    desk.appendChild(hr);
+    desk.appendChild(document.createElement("hr"));
     //FOOTER
     let footer = document.createElement("div");
     let input = document.createElement("input");
@@ -67,11 +67,8 @@ function createTask(ul) {
 }
 
 function deleteTask(id) {
-    let task = "t" + id;
-    console.log('task', task);
-    document.getElementById(task).remove();
-    let span = "span" + id;
-    document.getElementById(span).remove();
+    document.getElementById("t" + id).remove();
+    document.getElementById("span" + id).remove();
 }
 
 function changeTask() {
