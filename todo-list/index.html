@@ -2,8 +2,8 @@
 
 <head>
     <title>ToDoList</title>
-    <link href="style.css" rel="stylesheet">
     <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Revalia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -12,13 +12,15 @@
     <div class="panel">
         <div class="logo">ToDoList</div>
         <div>
+            <input type="button" onclick="clearStorage();" value="Clear">
+            <input type="button" onclick="saveToStorage();" value="Save">
             <input type="text" id="deskName" placeholder="The name of the desk">
             <input type="button" onclick="createDesk();" value="Add new desk">
         </div>
     </div>
     <div class="container" id="container">
         <script>
-            createDesk();
+            start();
         </script>
     </div>
 </body>
