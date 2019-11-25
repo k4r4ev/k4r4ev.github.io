@@ -1,21 +1,19 @@
-let storage = "";
+storage = new Array(new Array());
 let d = 1;
 let t = 1;
 
 function start() {
-    if (localStorage.length == 0) {
-        createDesk();
-    } else {
-        stringParser(JSON.parse(localStorage.getItem('appStorage')));
-    }
+    if (localStorage.length == 0) createDesk();
+    else stringParser(JSON.parse(localStorage.getItem('storage')));
+
 }
 
 function clearStorage() {
-    localStorage.removeItem('appStorage');
+    localStorage.clear();
     location.reload();
 }
 
-function createDesk(deskName = "The name of the desk", tasks = "") {
+function createDesk(deskName = "The name of the desk", tasks = new Array()) {
     let desk = document.createElement("div");
     desk.id = "d" + String(d);
     desk.className = "desk";
@@ -61,20 +59,13 @@ function deleteDesk(id) {
     document.getElementById(id.remove());
 }
 
-function createTasks(ol, tasks = "") {
-    let start = 0;
-    if (tasks == "") {
-        createTask(ol);
-    } else {
-        for (let i = 0; i < tasks.length; i++) {
-            if (tasks[i + 1] == "|") {
-                if (tasks[i] == "'") //если помечена как выполненная
-                    createTask(ol, tasks.slice(start, i), 1);
-                else createTask(ol, tasks.slice(start, i + 1));
-                start = i + 2;
-            }
-        }
-    }
+function createTasks(ol, tasks = new Array()) {
+    if (tasks.length == 0) createTask(ol);
+    else
+        for (let i = 0; i < tasks.length; i++)
+            if (tasks[i][tasks[i].length - 1] == "'") //если помечена как выполненная
+                createTask(ol, tasks[i].slice(0, tasks[i].length - 1), 1);
+            else createTask(ol, tasks[i]);
 }
 
 function createTask(ol, name = "task #" + t, completed = 0) {
@@ -114,46 +105,34 @@ function completeTask(id) {
 }
 
 function saveToStorage() {
-    localStorage.removeItem('appStorage');
-    storage = "";
+    localStorage.removeItem('storage');
+    storage = new Array();
     let desks = document.getElementsByClassName('desk');
+    let deskNumber = 0;
     for (let i = 1; i < desks.length + 1; i++) {
         let desk = document.getElementById("d" + i);
         let title = desk.getElementsByTagName("h2");
         let tasks = desk.getElementsByTagName("li");
+        let value = "";
         if (tasks.length != 0) { //сохраняем, если доска не пуста
-            storage += title[0].innerHTML;
-            storage += "{";
-            for (let j = 0; j < tasks.length; j++) {
-                storage += tasks[j].innerHTML;
-                if (tasks[j].classList.contains('complete')) {
-                    storage += "'";
-                }
-                storage += "|";
-            }
-            storage += "}";
+            storage[deskNumber] = new Array(tasks.length + 1);
+            storage[deskNumber][0] = title[0].innerHTML;
+            for (let j = 0; j < tasks.length; j++)
+                if (tasks[j].classList.contains('complete')) storage[deskNumber][j + 1] = tasks[j].innerHTML + "'";
+                else storage[deskNumber][j + 1] = tasks[j].innerHTML;
         }
+        deskNumber++;
     }
-    if (storage != "")
-        localStorage.setItem("appStorage", JSON.stringify(storage)); //сохраняем, если storage не пустой
+    if (storage.length != 0)
+        localStorage.setItem("storage", JSON.stringify(storage)); //сохраняем, если storage не пустой
 }
 
 function stringParser(str) {
-    let deskName = "";
-    let tasks = "";
     for (let i = 0; i < str.length; i++) {
-        if (str[i] != "{") {
-            deskName += str[i];
-        } else {
-            i++;
-            while (str[i] != "}") {
-                tasks += str[i];
-                i++;
-            }
-            //if (tasks != "") 
-            createDesk(deskName, tasks);
-            deskName = "";
-            tasks = "";
-        }
+        let deskName = str[i][0]; //название доски - первый элемент массива
+        let tasks = new Array();
+        for (let j = 0; str[i][j + 1] != null; j++)
+            tasks[j] = str[i][j + 1];
+        createDesk(deskName, tasks);
     }
 }
