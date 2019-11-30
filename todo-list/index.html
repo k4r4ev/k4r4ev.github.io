@@ -9,14 +9,11 @@
 </head>
 
 <body>
-    <div class="panel">
+    <div class="panel" id="panel">
         <div class="logo">ToDoList</div>
-        <div>
-            <input type="button" onclick="clearStorage();" value="Clear">
-            <input type="button" onclick="saveToStorage();" value="Save">
-            <input type="text" id="deskName" placeholder="The name of the desk">
-            <input type="button" onclick="createDesk();" value="Add new desk">
-        </div>
+        <script>
+            initHeader();
+        </script>
     </div>
     <div class="container" id="container">
         <script>
