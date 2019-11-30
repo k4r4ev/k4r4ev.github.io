@@ -208,13 +208,6 @@ function initEvents() {
         desks[i].addEventListener('drop', (e) => handleDrop(e, desks[i]), false);
         desks[i].addEventListener('dragend', (e) => handleDragEnd(e, desks[i]), false);
     }
-    var tasks = document.getElementsByTagName('li');
-    for (let i = 0; i < tasks.length; i++) {
-        tasks[i].addEventListener('dragstart', (e) => handleDragStart(e, desks[i]), false);
-        tasks[i].addEventListener('dragover', (e) => handleDragOver(e, desks[i]), false);
-        tasks[i].addEventListener('drop', (e) => handleDrop(e, desks[i]), false);
-        tasks[i].addEventListener('dragend', (e) => handleDragEnd(e, desks[i]), false);
-    }
 }
 
 function handleDragStart(e, desk) { //Срабатывает когда элeмент начал перемещаться
