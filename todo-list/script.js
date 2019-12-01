@@ -1,5 +1,6 @@
 //добавил возможность изменения задачи
-
+//drag-and-drop (в chrome и edge работает, в firefox нет) 
+//
 
 let storage = {};
 storage.desks = [];
@@ -15,7 +16,6 @@ function start() {
             createDesk(storage.desks[i].name, storage.desks[i].tasks);
         }
     }
-    initEvents();
 }
 
 function windowReload() {
@@ -103,6 +103,7 @@ function createDesk(deskName = "The name of the desk", tasks = []) {
     footer.appendChild(addingInput);
     desk.appendChild(footer);
     document.getElementById("container").appendChild(desk);
+    initEvents(desk); //инициализируем события drag-and-drop для доски
     deskNumber++;
 }
 
@@ -200,14 +201,11 @@ function changeTask(taskId, deskId) {
 let startDesk;
 let endDesk;
 
-function initEvents() {
-    var desks = document.querySelectorAll('.desk');
-    for (let i = 0; i < desks.length; i++) {
-        desks[i].addEventListener('dragstart', (e) => handleDragStart(e, desks[i]), false);
-        desks[i].addEventListener('dragover', (e) => handleDragOver(e, desks[i]), false);
-        desks[i].addEventListener('drop', (e) => handleDrop(e, desks[i]), false);
-        desks[i].addEventListener('dragend', (e) => handleDragEnd(e, desks[i]), false);
-    }
+function initEvents(desk) {
+    desk.addEventListener('dragstart', (e) => handleDragStart(e, desk), false);
+    desk.addEventListener('dragover', (e) => handleDragOver(e, desk), false);
+    desk.addEventListener('drop', (e) => handleDrop(e, desk), false);
+    desk.addEventListener('dragend', (e) => handleDragEnd(e, desk), false);
 }
 
 function handleDragStart(e, desk) { //Срабатывает когда элeмент начал перемещаться
