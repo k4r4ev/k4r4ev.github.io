@@ -1,7 +1,3 @@
-//добавил возможность изменения задачи
-//drag-and-drop (в chrome и edge работает, в firefox нет) 
-//
-
 let storage = {};
 storage.desks = [];
 let deskNumber = 1;
@@ -13,7 +9,7 @@ function start() {
     } else {
         storage = JSON.parse(localStorage.getItem('storage'));
         for (let i in storage.desks) {
-            createDesk(storage.desks[i].name, storage.desks[i].tasks);
+            createDesk(storage.desks[i].name, storage.desks[i].tasks, true);
         }
     }
 }
@@ -59,7 +55,7 @@ function clearStorage() {
     windowReload();
 }
 
-function createDesk(deskName = "The name of the desk", tasks = []) {
+function createDesk(deskName = "The name of the desk", tasks = [], old = false) {
     let desk = document.createElement("div");
     desk.id = "d" + deskNumber;
     desk.classList.add('desk');
@@ -74,7 +70,7 @@ function createDesk(deskName = "The name of the desk", tasks = []) {
     }
     titleText.innerHTML = deskName;
     document.getElementById('deskName').value = null;
-    saveDesk(deskName); //сохраняем доску (чтобы сбросить индексы в обьекте)
+    saveDesk(deskName, old); //сохраняем доску (чтобы сбросить индексы в обьекте)
     let titleButton = document.createElement("a");
     titleButton.addEventListener('click', () => deleteDesk(desk.id), false);
     titleButton.innerHTML = "delete";
@@ -94,7 +90,7 @@ function createDesk(deskName = "The name of the desk", tasks = []) {
     let nameInput = document.createElement("input");
     nameInput.setAttribute("type", "input");
     nameInput.setAttribute("placeholder", "Name of new task");
-    nameInput.id = "input" + deskNumber;
+    nameInput.id = ol.id + "_input";
     let addingInput = document.createElement("input");
     addingInput.setAttribute("type", "button");
     addingInput.addEventListener('click', () => createTasks(ol), false);
@@ -107,10 +103,20 @@ function createDesk(deskName = "The name of the desk", tasks = []) {
     deskNumber++;
 }
 
-function saveDesk(deskName) {
-    storage.desks[deskNumber - 1] = {};
-    storage.desks[deskNumber - 1].name = deskName;
-    storage.desks[deskNumber - 1].tasks = [];
+function saveDesk(deskName, old) {
+    if (old === true) {
+        storage.desks[deskNumber - 1] = {};
+        storage.desks[deskNumber - 1].name = deskName;
+        storage.desks[deskNumber - 1].order = deskNumber;
+        storage.desks[deskNumber - 1].tasks = [];
+    } else {
+        storage.desks.push({
+            name: deskName,
+            order: deskNumber,
+            tasks: []
+        });
+    }
+    console.log(storage);
     storageUpdate(); //сохраняем в localStorage 
 }
 
@@ -137,9 +143,10 @@ function createTasks(ol, tasks = []) {
 }
 
 function createTask(ol, name = "task #" + taskNumber, completed = false) {
-    if (document.getElementById("input" + ol.id.slice(2, ol.id.length)) && document.getElementById("input" + ol.id.slice(2, ol.id.length)).value != "") {
-        name = document.getElementById("input" + ol.id.slice(2, ol.id.length)).value;
-        document.getElementById("input" + ol.id.slice(2, ol.id.length)).value = "";
+    if (document.getElementById(ol.id + "_input") && //если инпут уже нарисован
+        document.getElementById(ol.id + "_input").value != "") {
+        name = document.getElementById(ol.id + "_input").value;
+        document.getElementById(ol.id + "_input").value = "";
     }
     let li = document.createElement("li");
     li.innerHTML = name;
@@ -187,7 +194,8 @@ function completeTask(taskId, deskId) {
 }
 
 function changeTask(taskId, deskId) {
-    document.getElementById("input" + deskId).value = storage.desks[deskId - 1].tasks[storage.desks[deskId - 1].tasks.indexOf(document.getElementById(taskId).innerHTML)];
+    document.getElementById("ol" + deskId + "_input").value =
+        storage.desks[deskId - 1].tasks[storage.desks[deskId - 1].tasks.indexOf(document.getElementById(taskId).innerHTML)];
     deleteTask(taskId, deskId);
     storageUpdate();
 }
