@@ -72,7 +72,7 @@ function createDesk(deskName = "The name of the desk", tasks = []) {
     document.getElementById('deskName').value = null;
     saveDesk(deskName); //сохраняем доску (чтобы сбросить индексы в обьекте)
     let titleButton = document.createElement("a");
-    titleButton.addEventListener('click', () => deleteDesk(desk.id, desk.id.slice(1, desk.id.length) - 1), false);
+    titleButton.addEventListener('click', () => deleteDesk(desk.id.slice(1, desk.id.length) - 1), false);
     titleButton.innerHTML = "delete";
     title.appendChild(titleText);
     title.appendChild(titleButton);
@@ -112,11 +112,10 @@ function saveDesk(deskName) {
     storageUpdate(); //сохраняем в localStorage 
 }
 
-function deleteDesk(deskId, deskOrder) {
+function deleteDesk(deskOrder) {
     storage.desks.splice(deskOrder, 1);
     storageUpdate();
-    document.getElementById(deskId).remove(); //удаляем доску
-    deskNumber--;
+    windowReload();
 }
 
 function createTasks(ol, tasks = []) {
@@ -164,7 +163,6 @@ function createTask(ol, name = "task #" + taskNumber, completed = false) {
         span.appendChild(deleteButton);
         ol.appendChild(li);
         ol.appendChild(span);
-        console.log(deskOrder);
         storage.desks[deskOrder].tasks.push(name);
     }
     storageUpdate();
@@ -208,26 +206,26 @@ function initEvents(desk) {
     desk.addEventListener('dragend', (e) => handleDragEnd(e, desk), false);
 }
 
-function handleDragStart(e, desk) { //Срабатывает когда элeмент начал перемещаться
+function handleDragStart(e, desk) { //срабатывает когда элeмент начал перемещаться
     desk.style.opacity = '0.4';
     startDesk = desk;
 }
 
-function handleDragOver(e, desk) { //Срабатывает когда перемещаемый элемент оказывается над принимающей элементы зоной
+function handleDragOver(e, desk) { //срабатывает когда перемещаемый элемент оказывается над принимающей элементы зоной
     if (e.preventDefault) {
         e.preventDefault();
     }
     e.dataTransfer.dropEffect = 'move';
 }
 
-function handleDrop(e, desk) { //Вызывается для элемента, над которым произошло сбрасывание перемещаемого элемента
+function handleDrop(e, desk) { //вызывается для элемента, над которым произошло сбрасывание перемещаемого элемента
     if (e.stopPropagation) {
         e.stopPropagation();
     }
     endDesk = desk;
 }
 
-function handleDragEnd(e, desk) { //Срабатывает когда перетаскивание завершится
+function handleDragEnd(e, desk) { //срабатывает, когда перетаскивание завершится
     desk.classList.remove('over');
     desk.style.opacity = '1';
     changeDesks(startDesk, endDesk);
