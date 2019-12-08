@@ -164,6 +164,7 @@ function createTask(ol, name = "task #" + taskNumber, completed = false) {
         span.appendChild(deleteButton);
         ol.appendChild(li);
         ol.appendChild(span);
+        console.log(deskOrder);
         storage.desks[deskOrder].tasks.push(name);
     }
     storageUpdate();
