@@ -28,14 +28,17 @@ function initHeader() {
     let clearInput = document.createElement("input");
     clearInput.setAttribute("type", "button");
     clearInput.id = "clear";
-    clearInput.value = "Clear";
+    clearInput.classList.add("panelInput1");
+    clearInput.value = "Delete all desk";
     let createName = document.createElement("input");
     createName.setAttribute("type", "input");
     createName.id = "deskName";
+    createName.classList.add("panelInput2");
     createName.setAttribute("placeholder", "The name of the desk");
     let creatDeskButton = document.createElement("input");
     creatDeskButton.setAttribute("type", "button");
     creatDeskButton.id = "createDesk";
+    creatDeskButton.classList.add("panelInput3");
     creatDeskButton.value = "Add new desk";
     header.appendChild(clearInput);
     header.appendChild(createName);
@@ -65,7 +68,7 @@ function createDesk(deskName = "The name of the desk", tasks = []) {
     title.classList.add('title');
     let titleText = document.createElement("h2");
     let titleCaption = document.getElementById('deskName').value;
-    if (titleCaption != "") {
+    if (titleCaption !== "") {
         deskName = titleCaption;
     }
     titleText.innerHTML = deskName;
@@ -109,7 +112,7 @@ function saveDesk(deskName) {
         order: deskNumber,
         tasks: []
     });
-    storageUpdate(); //сохраняем в localStorage 
+    storageUpdate(); //сохраняем в localStorage
 }
 
 function deleteDesk(deskOrder) {
@@ -134,7 +137,7 @@ function createTasks(ol, tasks = []) {
 
 function createTask(ol, name = "task #" + taskNumber, completed = false) {
     if (document.getElementById(ol.id + "_input") && //если инпут уже нарисован
-        document.getElementById(ol.id + "_input").value != "") {
+        document.getElementById(ol.id + "_input").value !== "") {
         name = document.getElementById(ol.id + "_input").value;
         document.getElementById(ol.id + "_input").value = "";
     }
@@ -191,17 +194,13 @@ function changeTask(taskId, deskOrder) {
 }
 
 
-
-
-
-
 //DRAG&DROP
 let startDesk;
 let endDesk;
 
 function initEvents(desk) {
     desk.addEventListener('dragstart', (e) => handleDragStart(e, desk), false);
-    desk.addEventListener('dragover', (e) => handleDragOver(e, desk), false);
+    desk.addEventListener('dragover', (e) => handleDragOver(e), false);
     desk.addEventListener('drop', (e) => handleDrop(e, desk), false);
     desk.addEventListener('dragend', (e) => handleDragEnd(e, desk), false);
 }
@@ -211,7 +210,7 @@ function handleDragStart(e, desk) { //срабатывает когда элeм�
     startDesk = desk;
 }
 
-function handleDragOver(e, desk) { //срабатывает когда перемещаемый элемент оказывается над принимающей элементы зоной
+function handleDragOver(e) { //срабатывает когда перемещаемый элемент оказывается над принимающей элементы зоной
     if (e.preventDefault) {
         e.preventDefault();
     }
@@ -232,7 +231,7 @@ function handleDragEnd(e, desk) { //срабатывает, когда пере�
 }
 
 function changeDesks(startDesk, endDesk) {
-    if (startDesk && endDesk && startDesk.id != endDesk.id) {
+    if (startDesk && endDesk && startDesk.id !== endDesk.id) {
         let nameTerm = storage.desks[startDesk.id.slice(1, startDesk.id.length) - 1].name;
         let tasksTerm = storage.desks[startDesk.id.slice(1, startDesk.id.length) - 1].tasks;
         storage.desks[startDesk.id.slice(1, startDesk.id.length) - 1].name = storage.desks[endDesk.id.slice(1, endDesk.id.length) - 1].name;

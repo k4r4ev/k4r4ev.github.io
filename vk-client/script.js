@@ -18,7 +18,7 @@ function login() {
             }
         }, 2);
     });
-};
+}
 
 function getFriends() {
     return new Promise((resolve, reject) => {
@@ -41,13 +41,13 @@ function getFriends() {
             }
         });
     });
-};
+}
 
 function drawFriends(items) {
     document.getElementById("container").innerHTML = "";
     let friends = document.createElement("div");
     friends.classList.add("friends");
-    for (item in items) {
+    for (let item in items) {
         let friend = document.createElement("div");
         friend.classList.add("friend");
         let img = document.createElement("img");
@@ -63,7 +63,7 @@ function drawFriends(items) {
             city.classList.add("city");
             infoDiv.appendChild(city);
         }
-        if (items[item].online || items[item].online == 1) {
+        if (items[item].online || items[item].online === 1) {
             let online = document.createElement("div");
             online.classList.add("online");
             infoDiv.appendChild(online);
@@ -71,7 +71,7 @@ function drawFriends(items) {
         friend.appendChild(img);
         friend.appendChild(infoDiv);
         friends.appendChild(friend);
-        if (item != items.length - 1) {
+        if (item !== items.length - 1) {
             friends.appendChild(document.createElement("hr"));
         }
     }

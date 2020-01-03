@@ -36,6 +36,7 @@ hr {
 
 .logo {
     font-family: Revalia, serif;
+    font-weight: bolder;
     font-size: 30px;
     text-align: center;
     color: darkolivegreen;
@@ -51,15 +52,40 @@ hr {
     align-items: center;
 }
 
-.panel input {
+.panelInput1 {
     background-color: darkolivegreen;
     border: none;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     color: lightsteelblue;
     outline: none;
     text-align: center;
-    margin-right: 10px;
+    margin-right: 0;
+    padding: 0 10px;
+}
+
+.panelInput2 {
+    background-color: darkolivegreen;
+    border: none;
+    height: 30px;
+    border-radius: 0;
+    color: lightsteelblue;
+    outline: none;
+    text-align: center;
+    border-left: rgb(72, 90, 41) solid 2px;
+    border-right: rgb(72, 90, 41) solid 2px;
+    padding: 0 10px;
+}
+
+.panelInput3 {
+    background-color: darkolivegreen;
+    border: none;
+    height: 30px;
+    border-radius: 0 10px 10px 0;
+    color: lightsteelblue;
+    outline: none;
+    text-align: center;
+    margin-right: 30px;
     padding: 0 10px;
 }
 
@@ -79,9 +105,8 @@ hr {
     color: lightslategrey;
     outline: none;
     text-align: center;
-    margin: 0;
     padding: 0;
-    margin-right: 10px;
+    margin: 0 10px 0 0;
     cursor: pointer;
 }
 
@@ -94,7 +119,6 @@ hr {
     border: none;
     height: 30px;
     border-radius: 10px;
-    /* border: 2px solid brown; */
     color: lightsteelblue;
     outline: none;
     text-align: center;

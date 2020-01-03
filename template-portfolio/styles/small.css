@@ -51,9 +51,6 @@ button {
 }
 
 
-
-
-
 /* FIRST-SCREEN */
 .first-screen {
     width: 100%;
@@ -84,9 +81,6 @@ button {
     justify-content: space-around;
     align-items: center;
 }
-
-
-
 
 
 /* HEADER */
@@ -126,10 +120,6 @@ button {
 }
 
 
-
-
-
-
 /* ABOUT-ME */
 .about-me {
     width: 100%;
@@ -139,10 +129,6 @@ button {
     justify-content: center;
     align-items: center;
 }
-
-
-
-
 
 
 /* NUMBERS */
@@ -182,9 +168,6 @@ button {
 }
 
 
-
-
-
 /* SKILLS */
 .skills-box {
     width: 100%;
@@ -222,9 +205,6 @@ button {
     margin-top: 50px;
     width: 90%;
 }
-
-
-
 
 
 /* VIDEO */
@@ -272,9 +252,6 @@ button {
 }
 
 
-
-
-
 /* PROJECTS */
 .projects {
     margin: 100px 0;
@@ -309,9 +286,6 @@ a.project2 {
 }
 
 
-
-
-
 /* CLIENTS */
 .clients {
     margin: 100px 0;
@@ -330,10 +304,6 @@ a.project2 {
     width: 200px;
     height: 100px;
 }
-
-
-
-
 
 
 /* FORM */
@@ -371,9 +341,6 @@ a.project2 {
     width: calc(100% - 40px);
     height: 175px;
 }
-
-
-
 
 
 /* FOOTER */

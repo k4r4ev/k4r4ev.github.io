@@ -49,8 +49,8 @@ canvas {
 }
 
 .photos img {
-    height: auto;
-    width: 200px;
+    height: calc(100vh - 550px);
+    width: auto;
     background-size: cover;
     margin: 5px;
 }
