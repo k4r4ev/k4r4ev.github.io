@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>andrey karaev</title>
     <link href="style.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -10,42 +10,48 @@
 </head>
 
 <body>
-    <div class="window" id="window" graggable="true">
-        <div class="header">
-            <p style="margin: 0; text-align: left;">Resume</p>
-            <hr>
-        </div>
-        <div class="main"> <img id="img1" src="images/img1.jpeg" alt="img1" />
-            <p>karaev andrey</p>
-            <p>web developer</p>
-            <p>krasnodar</p>
-            <hr>
-        </div>
-        <div class="footer">
-            <p style="margin: 0;">@k4r4ev</p>
-            <div class="icons" style="margin: 0;">
+
+<div class="window" style="top: 0; left: 0" onmousedown="dragOBJ(this,event); return false;" draggable="true">
+    <div class="header">
+        <p>Resume</p>
+    </div>
+
+    <hr>
+
+    <div class="article"><img id="img1" src="images/img1.jpeg" alt="img1"/>
+        <p>karaev andrey</p>
+        <p>web developer</p>
+        <p>krasnodar</p>
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        <div class="icons">
                 <span class="github">
                     <a href="https://github.com/k4r4ev" target="_blank"><i class="fa fa-github fa-2x"></i></a>
                 </span>
-                <span class="twitter">
+            <span class="twitter">
                     <a href="https://twitter.com/k4r4ev" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
                 </span>
-                <span class="instagram">
+            <span class="instagram">
                     <a href="https://www.instagram.com/k4r4ev" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
                 </span>
-                <span class="facebook">
+            <span class="facebook">
                     <a href="https://www.facebook.com/k4r4ev" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
                 </span>
-                <span class="vk">
+            <span class="vk">
                     <a href="https://vk.com/k4r4ev" target="_blank"><i class="fa fa-vk fa-2x"></i></a>
                 </span>
-                <span class="telegram">
+            <span class="telegram">
                     <a href="https://www.telegram.com/k4r4ev" target="_blank"><i class="fa fa-telegram fa-2x"></i></a>
                 </span>
-            </div>
+            <p>@k4r4ev</p>
         </div>
     </div>
-    <script src="script.js"></script>
+
+</div>
+<script src="script.js"></script>
 </body>
 
 </html>

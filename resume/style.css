@@ -1,25 +1,21 @@
+p {
+    margin: 5px;
+}
+
 body {
-    background: radial-gradient(circle farthest-corner at 500px 1000px, grey, rgb(36, 41, 46));
+    background: #2e2e2e;
 }
 
 .window {
-    opacity: 0.4;
-    height: 550px;
+    position: relative;
     width: 500px;
     border: 2px solid white;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle farthest-corner at 1000px 500px, grey, black);
-    transition-duration: 3s;
+    background: radial-gradient(circle farthest-corner at 1000px 500px, grey, #2e2e2e);
 }
 
 .window:hover {
-    transition-duration: 3s;
-    background: radial-gradient(circle farthest-corner at 800px 300px, grey, black);
-    opacity: 1;
+    background: radial-gradient(circle farthest-corner at 900px 400px, grey, #2e2e2e);
     cursor: pointer;
 }
 
@@ -48,21 +44,19 @@ body {
 }
 
 .icons {
-    margin-top: 15px;
     transition-duration: 2s;
+    margin-top: 10px;
 }
 
 .icons * a {
     display: inline-block;
     width: 20px;
     height: 20px;
-    transition: 0.15s;
     background: linear-gradient(45deg, grey, black);
     border-radius: 25px;
     margin: 0 10px 10px 0;
     color: white;
     border: 2px solid white;
-    transition: 0.2s;
 }
 
 .github a {
