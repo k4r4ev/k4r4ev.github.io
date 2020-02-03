@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Post No Bills Jaffna SemiBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Post No Bills Jaffna SemiBold'), url('fonts/PostNoBillsJaffna-SemiBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Raleway'), url('fonts/Raleway-Medium.ttf') format('woff');
+}
+
+.first-screen {
+    width: 100%;
+    height: 840px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-image: url("images/background.png");
+    background-size: auto;
+}
+
+.first-screen__header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.logo_name {
+    color: #fff;
+    font-size: 34px;
+    font-family: 'Post No Bills Jaffna SemiBold', serif;
+}
+
+.logo_text {
+    color: #fff;
+    font-family: Raleway, serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.header_link {
+    font-family: Raleway, serif;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.header_link:hover {
+    text-decoration: underline;
+}
+
+.first-screen__menu :last-child {
+    margin-right: 0;
+}
+
+.first-screen__center {
+    width: 582px;
+    height: 470px;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.first-screen__center img {
+    width: 40px;
+    height: 40px;
+}
+
+.center_text {
+    color: #D4C17F;
+    font-family: Playfair Display, serif;
+    font-size: 48px;
+    text-align: center;
+}
+
+.first-screen__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.first-screen__footer span {
+    font-family: Raleway, serif;
+    font-size: 18px;
+    width: 260px;
+    color: #bdbdbd;
+}
+
+.first-screen__footer img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
