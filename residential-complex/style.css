@@ -162,3 +162,61 @@ body {
     font-family: Roboto, serif;
     font-size: 20px;
 }
+
+
+
+
+/* APARTMENTS */
+.apartments {
+    width: 1100px;
+    height: 806px;
+}
+
+.apartments p {
+    font-family: Playfair Display, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    color: #D4C17F;
+    margin-bottom: 100px;
+}
+
+.apartments div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.apartment {
+    width: 535px;
+    height: 320px;
+    margin-bottom: 30px;
+}
+
+.loft1 {
+    background-image: url("images/Rectangle1.png");
+}
+
+.loft2 {
+    background-image: url("images/Rectangle2.png");
+}
+
+.loft3 {
+    background-image: url("images/Rectangle3.png");
+}
+
+.loft4 {
+    background-image: url("images/Rectangle4.png");
+}
+
+.apartment p {
+    position: absolute;
+    margin-top: 248px;
+    margin-left: 50px;
+    font-family: Raleway, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: #FFFFFF;
+}
