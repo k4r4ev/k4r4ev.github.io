@@ -35,6 +35,77 @@ body {
     width: 100%;
 }
 
+.title {
+    font-family: Playfair Display, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    color: #D4C17F;
+}
+
+.input {
+    width: 255px;
+    height: 50px;
+    background: #5d636a;
+    opacity: 0.8;
+    border: none;
+    font-family: Raleway, serif;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.input[type="text"]::placeholder {
+    text-align: center;
+    color: #fff;
+}
+
+.button {
+    width: 255px;
+    height: 50px;
+    background: #D4C17F;
+    border: none;
+    font-family: Raleway, serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.form_text {
+    width: 255px;
+    height: 28px;
+    font-family: Raleway, serif;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #E7E7E7;
+}
+
+.logo_name {
+    color: #fff;
+    font-size: 34px;
+    font-family: 'Post No Bills Jaffna SemiBold', serif;
+}
+
+.logo_text {
+    color: #fff;
+    font-family: Raleway, serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.link {
+    font-family: Raleway, serif;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 
 /* FIRST-SCREEN */
 .first-screen {
@@ -60,29 +131,8 @@ body {
     flex-direction: row;
 }
 
-.logo_name {
-    color: #fff;
-    font-size: 34px;
-    font-family: 'Post No Bills Jaffna SemiBold', serif;
-}
-
-.logo_text {
-    color: #fff;
-    font-family: Raleway, serif;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.header_link {
-    font-family: Raleway, serif;
-    text-decoration: none;
+.first-screen__header .link {
     margin-right: 40px;
-    font-size: 14px;
-    color: #fff;
-}
-
-.header_link:hover {
-    text-decoration: underline;
 }
 
 .first-screen__menu :last-child {
@@ -169,12 +219,7 @@ body {
     min-height: 806px;
 }
 
-.apartments p {
-    font-family: Playfair Display, serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    color: #D4C17F;
+.apartments .title {
     margin-bottom: 100px;
 }
 
@@ -191,19 +236,19 @@ body {
     margin-bottom: 30px;
 }
 
-.loft1 {
+.loft-1 {
     background-image: url("images/Rectangle1.png");
 }
 
-.loft2 {
+.loft-2 {
     background-image: url("images/Rectangle2.png");
 }
 
-.loft3 {
+.loft-3 {
     background-image: url("images/Rectangle3.png");
 }
 
-.loft4 {
+.loft-4 {
     background-image: url("images/Rectangle4.png");
 }
 
@@ -232,6 +277,10 @@ body {
     align-items: center;
 }
 
+.cta .title {
+    margin-bottom: 50px;
+}
+
 .cta__div {
     display: flex;
     flex-direction: row;
@@ -244,15 +293,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     width: 535px;
-    height: 200px;
     margin-right: 35px;
-}
-
-.cta__title {
-    font-family: Playfair Display, serif;
-    font-style: normal;
-    font-size: 36px;
-    color: #D4C17F;
 }
 
 .cta__text {
@@ -272,44 +313,6 @@ body {
     width: 540px;
     height: 145px;
 }
-
-.cta__input {
-    width: 255px;
-    height: 50px;
-    background: #5d636a;
-    opacity: 0.8;
-    border: none;
-    font-family: Raleway, serif;
-    font-size: 16px;
-    color: #fff;
-}
-
-.cta__input[type="text"]::placeholder {
-    text-align: center;
-    color: #fff;
-}
-
-.cta__button {
-    width: 255px;
-    height: 50px;
-    background: #D4C17F;
-    border: none;
-    font-family: Raleway, serif;
-    font-size: 16px;
-    color: #FFFFFF;
-}
-
-.cta__form p {
-    width: 255px;
-    height: 28px;
-    font-family: Raleway, serif;
-    font-size: 13px;
-    line-height: 16px;
-    text-align: center;
-    color: #E7E7E7;
-}
-
-
 
 
 /* VIDEO */
@@ -344,4 +347,96 @@ body {
     border-bottom: 20px solid transparent;
     cursor: pointer;
     border-radius: 3px 30px 0 3px;
+}
+
+
+/* MAP */
+.map {
+    width: 1110px;
+    margin-top: 180px;
+}
+
+.canvas {
+    height: 358px;
+    width: 1110px;
+    background: #626262;
+    margin-top: 100px;
+}
+
+
+/* QUESTIONS */
+.questions {
+    margin-top: 180px;
+}
+
+.questions div {
+    margin-top: 50px;
+    width: 1110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    height: 272px;
+    background: #2D343C;
+    margin-top: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.white-text {
+    font-family: Raleway, serif;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.email {
+    color: #D4C17F;
+}
+
+.col {
+    padding-top: 72px;
+}
+
+.col > p {
+    margin-bottom: 15px;
+}
+
+.col :last-child {
+    margin-bottom: 0;
+}
+
+.col-1 {
+    width: 134px;
+}
+
+.col-2 {
+    width: 119px;
+}
+
+.col-3 {
+    width: 119px;
+}
+
+.col-4 {
+    width: 239px;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social * {
+    margin-right: 20px;
+}
+
+.social :last-child {
+    margin-right: 0;
 }
