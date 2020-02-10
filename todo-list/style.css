@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: darkolivegreen;
+    background-color: #3e3e3e;
     font-family: Roboto, serif;
 }
 
@@ -14,9 +14,9 @@ h2 {
 
 hr {
     border: none;
-    color: brown;
-    background-color: brown;
-    height: 4px;
+    color: #3e3e3e;
+    background-color: #3e3e3e;
+    height: 3px;
 }
 
 .over {
@@ -39,23 +39,25 @@ hr {
     font-weight: bolder;
     font-size: 30px;
     text-align: center;
-    color: darkolivegreen;
+    color: #959b8b;
     margin-left: 20px;
 }
 
 .panel {
     width: 100%;
     height: 50px;
-    background-color: brown;
+    background-color: #862d2d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .panelInput1 {
-    background-color: darkolivegreen;
+    background-color: #772323;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border: none;
-    height: 30px;
+    height: 35px;
     border-radius: 10px 0 0 10px;
     color: lightsteelblue;
     outline: none;
@@ -65,22 +67,24 @@ hr {
 }
 
 .panelInput2 {
-    background-color: darkolivegreen;
+    background-color: #772323;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border: none;
-    height: 30px;
+    height: 35px;
     border-radius: 0;
     color: lightsteelblue;
     outline: none;
     text-align: center;
-    border-left: rgb(72, 90, 41) solid 2px;
-    border-right: rgb(72, 90, 41) solid 2px;
+    border-left: #862d2d solid 1px;
+    border-right: #862d2d solid 1px;
     padding: 0 10px;
 }
 
 .panelInput3 {
-    background-color: darkolivegreen;
+    background-color: #772323;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border: none;
-    height: 30px;
+    height: 35px;
     border-radius: 0 10px 10px 0;
     color: lightsteelblue;
     outline: none;
@@ -91,13 +95,14 @@ hr {
 
 .desk {
     width: 400px;
-    border: 4px solid brown;
     border-radius: 10px;
+    background-color: #424242;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 20px;
 }
 
 .desk a {
-    background-color: darkolivegreen;
+    background-color: #424242;
     font-size: 15px;
     border: none;
     height: 30px;
@@ -115,10 +120,11 @@ hr {
 }
 
 .desk input {
-    background-color: brown;
+    background-color: #3e3e3e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border: none;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: lightsteelblue;
     outline: none;
     text-align: center;
