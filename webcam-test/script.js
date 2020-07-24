@@ -7,7 +7,7 @@ window.onload = function () {
     function captureMe() {
         context.translate(canvas.width, 0);
         context.scale(-1, 1);
-        context.drawImage(video, 0, 0, video.width, video.height);
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
         let base64dataUrl = canvas.toDataURL('image/png');
         context.setTransform(1, 0, 0, 1, 0, 0);
         let img = new Image();

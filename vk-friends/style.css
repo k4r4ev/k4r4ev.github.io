@@ -27,6 +27,12 @@ button {
     border: none;
     border-radius: 7px;
     outline: none;
+    transition: all 0.2s ease-out;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #5689c3;
 }
 
 .panel {
